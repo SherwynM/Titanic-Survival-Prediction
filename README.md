@@ -5,10 +5,10 @@ This repository contains the code for a machine learning model that predicts pas
 ## Features
 
 - **Data Preprocessing**: Clean and prepare the Titanic dataset for modeling.
-- **Feature Engineering**: Create additional features to improve model performance (optional).
+- **Feature Engineering**: Create additional features to improve model performance.
 - **XGBoost Model Training**: Train an XGBoost model to predict passenger survival.
 - **Evaluation**: Evaluate the model's performance using metrics like accuracy or F1-score.
-- **(Optional) Web Application**: Deploy the model as a web application for interactive prediction (if applicable).
+- **Webpage**: Deploy the model as a web application for interactive prediction.
 
 ## Requirements
 
@@ -17,11 +17,12 @@ This repository contains the code for a machine learning model that predicts pas
 - Pandas
 - Scikit-learn
 - XGBoost
-- Matplotlib/Seaborn (optional)
+- Matplotlib/Seaborn
+- flask
 
 ## Instructions
 
 1. Clone this repository.
 2. Install the required packages using `pip install -r requirements.txt` (if provided).
-3. Run the Python script (e.g., `main.py`) to train the model and evaluate its performance.
-4. (Optional) Refer to additional instructions for deploying the model as a web application.
+3. Run the Python script (e.g., `app.py`) to train the model and evaluate its performance.
+4. Refer to additional instructions for deploying the model as a web application.
