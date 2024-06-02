@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url('pic/background.jpg');
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1px 0 445px; /* Add margin-right: 20px */
+    width: 465px;
+    height: 520px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10%;
+    border: 2px solid #fff; /* Example: solid white border, 2px width */
+    
+  }
+
+
+  label {
+    font-weight: bold;
+    color: rgb(245, 210, 146);
+  }
+
+  select {
+    /* Basic styling */
+    padding: 6px 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Remove default outline */
+    outline: none;
+    /* Add some space between options */
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  select:hover {
+    border-color: #1f4bac; /* Change border color on hover */
+  }
+  
+  select:focus {
+    border-color: #fa0101; /* Change border color on focus */
+  }
+  
+  /* Optional: Custom Arrow (using before pseudo-element) */
+  select::before {
+    content: ""; /* Add content to generate the arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust arrow position */
+    transform: translateY(-50%); /* Center the arrow vertically */
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #ccc; /* Adjust arrow color and size */
+  }
+  
+  select:hover::before {
+    border-bottom-color: #888; /* Change arrow color on hover */
+  }
+  
+  select:focus::before {
+    border-bottom-color: #4CAF50; /* Change arrow color on focus */
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    /* Add animation on hover */
+    transition: all 0.5s ease; /* Smooth transition on hover */
+  }
+  
+  input[type="submit"]:hover {
+    /* Apply hover-animate class on hover */
+    animation: hover-animate 0.5s ease-in-out infinite;
+  }
+  input[type="number"] {
+    width: 100px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    background-color: #eee; /* Light gray background */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    margin-left:10px;
+    padding: 2px; /* Padding around text */
+  }
+  
+  input[type="number"]:hover {   /* Add hover styles here */
+    background-color: #ddd; /* Slightly darker background on hover */
+    border-color: #aaa; /* Slightly darker border on hover */
+  }
+  
+  
+  /* Animation keyframes */
+  @keyframes hover-animate {
+    from {
+      /* Start with no border */
+      box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+    to {
+      /* Animate to a dark green border with a slight glow */
+      box-shadow: inset 0 0 0 2px rgba(0, 128, 0, 0.5);
+    }
+  }
+  
+  .prediction {
+    text-align: center; /* Center align the text */
+    font-weight: bold; /* Make the text bold */
+    color: rgb(236, 11, 11); /* Set the text color to red */
+    font-size: 1.5em; /* Increase font size slightly for emphasis */
+    padding-bottom: 5px; /* Add some padding below the text */
+    margin-left: 8px;
+  }
+  
+  .form-label {
+    font-weight: bold; /* Default bold for labels */
+    text-align: center;
+    display: inline-block; /* Ensures labels stay on same line */
+    width: 140px; /* Adjust label width as needed */
+    margin-bottom: 2px; /* Add some space below labels */
+    margin-left: 10px; /* Add some space below labels */
+  }
+  
+  .radio-container {
+    display: flex; /* Make the container display radio buttons horizontally */
+    margin-top: 7px;
+  }
+  
+  /* Rest of the CSS for radio buttons remains the same */
+  
+  .progress-bar {
+    width: 490px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 3px;
+    margin-left: 430px;
+    position: relative;
+  }
+  
+  .progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: hsl(211, 100%, 50%);
+    border-radius: 5px;
+    animation: fill-progress 0.2s ease-in-out forwards;
+  }
+  
+  @keyframes fill-progress {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+
+  .image-container {
+  position: fixed; /* Fix to the side */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical position */
+  animation: float 3s ease-in-out infinite alternate;
+  border-radius: 50%; /* Add rounded corners */
+}
+
+.left {
+  left: 0; /* Position on left side */
+  transform: translateY(-50%) rotate(-45deg); /* Center and rotate left */
+}
+
+.right {
+  right: 0; /* Position on right side */
+  transform: translateY(-50%) rotate(45deg); /* Center and rotate right */
+}
+
+@keyframes float {
+  from { transform: translateY(-50%) scale(1); }
+  to { transform: translateY(-40%) scale(1.1); }
+}
+
