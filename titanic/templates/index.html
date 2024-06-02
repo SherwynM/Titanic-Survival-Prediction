@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Model</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+  
+  <div class="image-container left">
+    <img src="static/pic/side1.jpg" alt="Image 1"  style=" transform: translateY(-50%) rotate(-45deg);margin-left: 20px; width:200px; border-radius:20%;">
+  </div>
+  <div class="image-container right">
+    <img src="static/pic/side2.jpg" alt="Image 2" style=" transform: translateY(-50%) rotate(45deg); margin-right: 20px; width:200px; height:130px; border-radius:20%;">
+  </div>
+  
+  <h1 id="heading">&nbsp Titanic Survival Prediction</h1>
+  <form method="post">
+
+    <label class="form-label" style="color: white;  text-decoration: underline;">Passenger Class</label>
+    <div class="radio-container">
+     
+      <input type="radio" name="Pclass" value="1" required> 
+      <label class="container" style="margin-top:3px;">First
+        <span class="checkmark"></span>
+      </label>
+
+      
+      <input type="radio" name="Pclass" value="2" required>
+      <label class="container" style="margin-top:3px;">Second
+        <span class="checkmark"></span>
+      </label>
+
+      <input type="radio" name="Pclass" value="3" required>
+      <label class="container" style="margin-top:3px;">Third
+        <span class="checkmark"></span>
+      </label>
+    </div><br>
+
+
+    <label class="form-label" style="color: white;  text-decoration: underline;">Sex</label>
+  
+    <div class="radio-container">
+          <input type="radio" name="Sex" value="male" required>
+      <label class="container" style="margin-top:3px;">Male
+        <span class="checkmark"></span>
+      </label>
+
+      <input type="radio" name="Sex" value="female" required>
+      <label class="container" style="margin-top:3px;">Female
+        <span class="checkmark"></span>
+      </label>
+    </div><br>
+
+    <label class="form-label"style="color: white; text-decoration: underline;">Age</label>
+    <input type="number" name="Age" min="1" placeholder="Eg: 23" required><br>
+
+    <label class="form-label"style="color: white; text-decoration: underline;">Region</label>
+
+    <select name="Embarked"required>
+      <option value="" disabled selected>Please Select</option>
+      <option value="S" >Southampton</option>
+      <option value="C" >Cherboug</option>
+      <option value="Q" >Queenstown</option>
+    </select><br>
+
+    <input type="submit" value="Predict">
+
+    {% if prediction %}
+      <p class="prediction">{{ prediction }}</p>
+    {% endif %}
+  </form>
+
+
+</script>
+</body>
+
+</html>
